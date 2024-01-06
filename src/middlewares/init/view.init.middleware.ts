@@ -9,7 +9,7 @@ export default {
         next: NextFunction
     ) => {
         await logMiddleware.error(req, res, async () => {
-            let ip = req.ip;
+            let ip = req.ip || "";
             let date = new Date();
             let _id = (req.session && req.session.data && req.session.data.id) ? req.session.data.id.toString() : "";
 

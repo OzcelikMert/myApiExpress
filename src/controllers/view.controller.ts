@@ -66,8 +66,8 @@ export default {
             let serviceResult = new Result();
             let data: InferType<typeof viewSchema.post> = req;
 
-            let ip = req.ip;
-            let ipDetail = lookup(req.ip);
+            let ip = req.ip || "";
+            let ipDetail = lookup(req.ip || "");
 
             let insertData = await viewService.add({
                 ...data.body,

@@ -40,9 +40,9 @@ export default {
                         id: user._id,
                         email: user.email,
                         roleId: user.roleId,
-                        ip: req.ip,
+                        ip: req.ip || "",
                         permission: user.permissions,
-                        token: userUtil.createToken(user._id.toString(), req.ip, time),
+                        token: userUtil.createToken(user._id.toString(), req.ip || "", time),
                         createAt: time,
                         updatedAt: time
                     }

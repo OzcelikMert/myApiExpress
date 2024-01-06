@@ -14,7 +14,7 @@ export default {
             console.log(e);
             await logService.add({
                 url: req.originalUrl,
-                ip: req.ip,
+                ip: req.ip || "",
                 method: req.method,
                 message: JSON.stringify({error: e}),
                 params: req.params,
